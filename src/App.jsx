@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import { AuthProvider } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
+import Home from './pages/Home';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <main className="flex-grow">
               <Routes>
                 <Route path="/" element={<div className="p-8">StudyNook Home</div>} />
+                <Route path="/" element={<Home />} />
               </Routes>
             </main>
             <Footer />
