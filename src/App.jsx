@@ -1,13 +1,24 @@
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import { ThemeProvider } from './context/ThemeContext';
+
 function App() {
   return (
-    <Router>
-      <div className="flex flex-col min-h-screen">
-        <main className="flex-grow flex items-center justify-center bg-slate-50 dark:bg-zinc-950">
-          <h1 className="text-4xl font-bold">StudyNook Frontend</h1>
-        </main>
-      </div>
-    </Router>
+    <ThemeProvider>
+      <AuthProvider>
+        <Router>
+          <div className="flex flex-col min-h-screen bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-slate-100 transition-colors duration-300">
+            <main className="flex-grow">
+              <Routes>
+                <Route path="/" element={<div className="p-8">StudyNook Home</div>} />
+              </Routes>
+            </main>
+            <Toaster position="top-center" />
+          </div>
+        </Router>
+      </AuthProvider>
+    </ThemeProvider>
   );
 }
 export default App;
