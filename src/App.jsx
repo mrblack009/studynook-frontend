@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import { AuthProvider } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
 import Home from './pages/Home';
+import RoomDetails from './pages/RoomDetails';
+import Rooms from './pages/Rooms';
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
               <Routes>
                 <Route path="/" element={<div className="p-8">StudyNook Home</div>} />
                 <Route path="/" element={<Home />} />
+                <Route path="/rooms" element={<Rooms />} />
+                <Route path="/rooms/:id" element={<RoomDetails />} />
               </Routes>
             </main>
             <Footer />
