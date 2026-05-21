@@ -5,6 +5,8 @@ import Navbar from './components/Navbar';
 import { AuthProvider } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
 import Home from './pages/Home';
+import Login from './pages/Login';
+import Register from './pages/Register';
 import RoomDetails from './pages/RoomDetails';
 import Rooms from './pages/Rooms';
 
@@ -21,6 +23,8 @@ function App() {
                 <Route path="/" element={<Home />} />
                 <Route path="/rooms" element={<Rooms />} />
                 <Route path="/rooms/:id" element={<RoomDetails />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
               </Routes>
             </main>
             <Footer />
