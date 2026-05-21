@@ -8,6 +8,7 @@ import { ThemeProvider } from './context/ThemeContext';
 import AddRoom from './pages/AddRoom';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import MyBookings from './pages/MyBookings';
 import Register from './pages/Register';
 import RoomDetails from './pages/RoomDetails';
 import Rooms from './pages/Rooms';
@@ -28,6 +29,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
                 <Route path="/add-room" element={<ProtectedRoute><AddRoom /></ProtectedRoute>} />
+                <Route path="/my-bookings" element={<ProtectedRoute><MyBookings /></ProtectedRoute>} />
               </Routes>
             </main>
             <Footer />
