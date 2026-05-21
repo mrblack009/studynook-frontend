@@ -2,8 +2,10 @@ import { Toaster } from 'react-hot-toast';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
+import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './context/AuthContext';
 import { ThemeProvider } from './context/ThemeContext';
+import AddRoom from './pages/AddRoom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -25,6 +27,7 @@ function App() {
                 <Route path="/rooms/:id" element={<RoomDetails />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/add-room" element={<ProtectedRoute><AddRoom /></ProtectedRoute>} />
               </Routes>
             </main>
             <Footer />
