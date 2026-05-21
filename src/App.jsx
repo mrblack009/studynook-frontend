@@ -10,6 +10,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import MyBookings from './pages/MyBookings';
 import MyListings from './pages/MyListings';
+import NotFound from './pages/NotFound';
 import Register from './pages/Register';
 import RoomDetails from './pages/RoomDetails';
 import Rooms from './pages/Rooms';
@@ -32,6 +33,7 @@ function App() {
                 <Route path="/add-room" element={<ProtectedRoute><AddRoom /></ProtectedRoute>} />
                 <Route path="/my-bookings" element={<ProtectedRoute><MyBookings /></ProtectedRoute>} />
                 <Route path="/my-listings" element={<ProtectedRoute><MyListings /></ProtectedRoute>} />
+                <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
             <Footer />
