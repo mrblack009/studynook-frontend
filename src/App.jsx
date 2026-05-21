@@ -22,26 +22,74 @@ function App() {
         <Router>
           <div className="flex flex-col min-h-screen bg-slate-50 dark:bg-zinc-950 text-slate-800 dark:text-slate-100 transition-colors duration-300">
             <Navbar />
+
             <main className="flex-grow">
               <Routes>
-                <Route path="/" element={<div className="p-8">StudyNook Home</div>} />
                 <Route path="/" element={<Home />} />
                 <Route path="/rooms" element={<Rooms />} />
                 <Route path="/rooms/:id" element={<RoomDetails />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/add-room" element={<ProtectedRoute><AddRoom /></ProtectedRoute>} />
-                <Route path="/my-bookings" element={<ProtectedRoute><MyBookings /></ProtectedRoute>} />
-                <Route path="/my-listings" element={<ProtectedRoute><MyListings /></ProtectedRoute>} />
+                <Route
+                  path="/add-room"
+                  element={
+                    <ProtectedRoute>
+                      <AddRoom />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/my-listings"
+                  element={
+                    <ProtectedRoute>
+                      <MyListings />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/my-bookings"
+                  element={
+                    <ProtectedRoute>
+                      <MyBookings />
+                    </ProtectedRoute>
+                  }
+                />
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>
             <Footer />
-            <Toaster position="top-center" />
+
+            <Toaster
+              position="top-center"
+              reverseOrder={false}
+              toastOptions={{
+                duration: 4000,
+                style: {
+                  background: '#1e293b',
+                  color: '#ffffff',
+                  borderRadius: '0px',
+                  padding: '12px 18px',
+                  fontSize: '14px',
+                },
+                success: {
+                  iconTheme: {
+                    primary: '#10b981',
+                    secondary: '#ffffff',
+                  },
+                },
+                error: {
+                  iconTheme: {
+                    primary: '#ef4444',
+                    secondary: '#ffffff',
+                  },
+                },
+              }}
+            />
           </div>
         </Router>
       </AuthProvider>
     </ThemeProvider>
   );
 }
+
 export default App;
